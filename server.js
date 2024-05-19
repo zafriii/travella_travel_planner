@@ -33,7 +33,7 @@ app.use('/api/blogs', blogRouter);
 
 app.use(errorMiddleware)
 
-const port = 5000;
+const PORT = 5000
 
 // app.get("/", (req, res) => {
 //     res.status(200).send("Welcome");
@@ -41,10 +41,8 @@ const port = 5000;
 
 
 connectDB().then(() => {
-
-app.listen(port, () => {
-    // console.log(`Server running at ${port}`)
-    console.log(`Server is running at http://localhost:${port}`)
-})
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 
 })
